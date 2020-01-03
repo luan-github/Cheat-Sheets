@@ -8,3 +8,5 @@ git add "comandos git.txt" # Para que o arquivo seja rastreado
 
 git commit -m "Arquivo inicial de comandos" # Grava mudanças no repositório
 
+git log # Exibe o histórico de altrações
+

@@ -16,3 +16,9 @@ git push origin master # Envia as alterações para o github
 
 git clone https://github.com/luan-github/Comandos-Git.git # baixar repositório do github
 
+git add . # rastrear todos os novos arquivos adicionados
+
+git add <pasta> # rastreia apenas os arquivos da pasta indicada
+
+
+

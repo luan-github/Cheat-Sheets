@@ -10,3 +10,6 @@ git commit -m "Arquivo inicial de comandos" # Grava mudanças no repositório
 
 git log # Exibe o histórico de altrações
 
+git remote add origin https://github.com/luan-github/... # Aponta o repositório local para o repositório do github
+
+git push origin master # Envia as alterações para o github

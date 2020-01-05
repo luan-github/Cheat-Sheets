@@ -22,6 +22,8 @@ git add <pasta> # rastreia apenas os arquivos da pasta indicada
 
 git commit -a -m "Adicionando e comitando alteração"
 
+git commit -am "Adicionando e comitando"
+
 
 
 

@@ -20,5 +20,8 @@ git add . # rastrear todos os novos arquivos adicionados
 
 git add <pasta> # rastreia apenas os arquivos da pasta indicada
 
+git commit -a -m "Adicionando e comitando alteração"
+
+
 
 

@@ -24,6 +24,37 @@ git commit -a -m "Adicionando e comitando alteração"
 
 git commit -am "Adicionando e comitando"
 
+git log -n 2 # lista os dois ultimos commits
+
+git log --oneline # resumo de logs
+
+git log --stat # resumo com linhas alteradas e removidas
+
+git log -n 2 --oneline --stat # log combinado
+
+git diff # exibe a diferença entre o que foi alterado e o arquivo comitado
+
+git diff --staged # exibe a diferença entre os arquivos na area de stage e a ultima vesao comitada
+
+git log -n 1 --oneline # código do último commit
+
+git diff <código>
+
+git diff HEAD
+
+git diff <commit anterior>..<ultimo commit>
+
+git diff <commit anterior>
+
+git diff <commit>~2 # exibe as duas ultimas alterações até o commit indicado, incluindo alterações não comitadas
+
+git rm <arquivo> # remove arquivo que já  foi adicionado a área de stage e comitado
+
+git mv nome novo_nome
+
+git mv <arquivo> <diretorio>/<novo_nome_arquivo>
+
+
 
 
 

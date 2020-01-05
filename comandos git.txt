@@ -54,7 +54,15 @@ git mv nome novo_nome
 
 git mv <arquivo> <diretorio>/<novo_nome_arquivo>
 
+git checkout -- <arquivo> # desfaz mudanças não rastreadas (inclusive recuperando arquivos apagados)
 
+git reset -- <arquivo> # remove mudanças da área de stage sem alterar o arquivo
+
+git reset --hard  # remove todas as mudanças da área de stage alterando o arquivos
+
+git revert --no-edit <commit> # desfaz mudanças comitadas
+
+git reset --hard <commit> # desfaz mudanças comitadas até o commit indicado
 
 
 

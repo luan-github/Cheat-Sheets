@@ -64,5 +64,24 @@ git revert --no-edit <commit> # desfaz mudanças comitadas
 
 git reset --hard <commit> # desfaz mudanças comitadas até o commit indicado
 
+// Criação de repositórioremoto
+git init --bare pasta.git # --> repository in /opt/repositorios/pasta.git/
 
+// Adicionando repositório remoto
+git remote add servidor(nome) file://192.168.0.1/opt/repositorios/pasta.git/(endereço)
+
+git remote # listar o repositórios
+
+git remote -v # listar os repositórios com a url inclusa
+
+//Alterando e removendo os repositórios remotos
+git remote rename name new_name # renomear servidor remoto
+
+git remote set-url servidor(name) new_address
+
+//Enviando commits para o repositório
+git push servidor master
+
+//Sincronização do repositório local
+git pull servidor master
 

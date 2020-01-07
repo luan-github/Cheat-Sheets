@@ -85,3 +85,17 @@ git push servidor master
 //Sincronização do repositório local
 git pull servidor master
 
+//Listar branches
+git branch
+
+git branch -v # branch com commit
+
+git log --parents # exibe os commits pai
+
+git log --decorate # exibe os commits para os quais o master aponta
+
+git log --parents --decorate --oneline # Resumo de logs com os commits pai de cada commit
+
+git branch design # cria uma nova branch nomeada design
+
+git checkout design # troca de branch

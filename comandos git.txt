@@ -99,3 +99,60 @@ git log --parents --decorate --oneline # Resumo de logs com os commits pai de ca
 git branch design # cria uma nova branch nomeada design
 
 git checkout design # troca de branch
+
+git checkout -b loja # cria e troca de branch
+
+git branch -d loja # deleta branch loja
+
+git branch -D loja # deleta a branch loja se está já possuir commits
+
+git branch --no-merged # verifica branchs ainda não mescladas
+
+git merge design -m "Mesclando com a branch design"
+
+git rebase design # Mescla alterações das branchs linearizando o historico de commits
+
+git branch -r # lista as branchs remotas
+
+git branch -a # lista branchs remotas e locais
+
+git branch -rv # lista branchs remotas com seus commits
+
+git push origin design # compartilhar branchs remotas
+
+git reset --hard ORIG_HEAD # desfazer o git rebase
+
+git checkout -b design origin/design # cria a branch design a partir da branch remota origin/design
+git checkout -t origin/design # cria a branch design a partir da branch remota origin/design
+
+//Obter commits de um repositório remoto
+git fetch origin
+
+git pull # obtem e mescla os novos commits de uma branch remota com uma branch local
+
+git pull --rebase # obetem e mescla novos commits usando rebase
+
+git push origin :contato # remover definitivamente a branch remota origin/contato e a branch contato
+
+git tag v1.0 # cria tag
+
+git tag # lista as tags
+
+git tag banners <343434>  # cria tag para o commit 343434
+
+git tag -d banners # deleta a tag banners
+
+git tag -a v1.1 -m "liberando versão urgente" # cria tag anotada
+
+git show -s v1.1 # exibe informaçãoes da tag anotada
+
+git push origin v1.1 # compartilha a tag v1.1
+
+git push origin --tags
+
+git rebase --abort # abortar o rebase voltando a situação antes da tentativa de mesclagem
+
+git rebase --skip # pular o commit que gerou o conflito
+
+git add <file> seguido de git rebase --continue # finalizar o git rebase após um conflito
+

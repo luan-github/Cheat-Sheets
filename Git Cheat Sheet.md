@@ -35,17 +35,17 @@ git remote add origin https://github.com/luan-github/...
 git push origin master 
 ```
 
-## baixar repositório do github
+## Baixar repositório do github
 ```
 git clone https://github.com/luan-github/Comandos-Git.git 
 ```
 
-## rastrear todos os novos arquivos adicionados
+## Rastrear todos os novos arquivos adicionados
 ```
 git add . 
 ```
 
-## rastreia apenas os arquivos da pasta indicada
+## Rastreia apenas os arquivos da pasta indicada
 ```
 git add <pasta> 
 ```
@@ -59,62 +59,62 @@ Ou
 git commit -am "Adicionando e comitando"
 ```
 
-## lista os dois ultimos commits
+## Lista os dois ultimos commits
 ```
 git log -n 2 
 ```
 
-## resumo de logs
+## Resumo de logs
 ```
 git log --oneline 
 ```
 
-## resumo com linhas alteradas e removidas
+## Resumo com linhas alteradas e removidas
 ```
 git log --stat 
 ```
 
-## log combinado
+## Log combinado
 ```
 git log -n 2 --oneline --stat 
 ```
 
-## exibe a diferença entre o que foi alterado e o arquivo comitado
+## Exibe a diferença entre o que foi alterado e o arquivo comitado
 ```
 git diff 
 ```
 
-# exibe a diferença entre os arquivos na area de stage e a ultima vesao comitada
+# Exibe a diferença entre os arquivos na area de stage e a ultima vesao comitada
 ```
 git diff --staged 
 ```
 
-## código do último commit
+## Código do último commit
 ```
 git log -n 1 --oneline 
 ```
 
-## exibe a diferença entre o que foi alterado dentro e fora da área de stage e o comit especificado
+## Exibe a diferença entre o que foi alterado dentro e fora da área de stage e o comit especificado
 ```
 git diff <código>
 ```
 
-## exibe a diferença entre o que foi alterado dentro e fora da área de stage e o comit do HEAD
+## Exibe a diferença entre o que foi alterado dentro e fora da área de stage e o comit do HEAD
 ```
 git diff HEAD
 ```
 
-## exibe a diferença entre commits
+## Exibe a diferença entre commits
 ```
 git diff <commit anterior>..<ultimo commit>
 ```
 
-## exibe as duas ultimas alterações até o commit indicado, incluindo alterações não comitadas
+## Exibe as duas ultimas alterações até o commit indicado, incluindo alterações não comitadas
 ```
 git diff <commit>~2 
 ```
 
-## remove arquivo que já  foi adicionado a área de stage e comitado
+## Remove arquivo que já  foi adicionado a área de stage e comitado
 ```
 git rm <arquivo> 
 ```
@@ -129,27 +129,27 @@ git mv nome novo_nome
 git mv <arquivo> <novodiretorio>/<arquivo>
 ```
 
-## desfaz mudanças não rastreadas (inclusive recuperando arquivos apagados)
+## Desfaz mudanças não rastreadas (inclusive recuperando arquivos apagados)
 ```
 git checkout -- <arquivo> 
 ```
 
-## remove mudanças da área de stage sem alterar o arquivo
+## Remove mudanças da área de stage sem alterar o arquivo
 ```
 git reset -- <arquivo> 
 ```
 
-## remove todas as mudanças da área de stage alterando o arquivos
+## Remove todas as mudanças da área de stage alterando o arquivos
 ```
 git reset --hard  
 ```
 
-## desfaz mudanças comitadas
+## Desfaz mudanças comitadas
 ```
 git revert --no-edit <commit> 
 ```
 
-## desfaz mudanças comitadas até o commit indicado
+## Desfaz mudanças comitadas até o commit indicado
 ```
 git reset --hard <commit> 
 ```
@@ -169,12 +169,12 @@ git remote add servidor(nome) file://192.168.0.1/opt/repositorios/pasta.git/(end
 git remote 
 ```
 
-## listar os repositórios com a url inclusa
+## Listar os repositórios com a url inclusa
 ```
 git remote -v 
 ```
 
-### Alterando e removendo os repositórios remotos
+## Alterando e removendo os repositórios remotos
 
 ## Renomear servidor remoto
 ```
@@ -201,17 +201,17 @@ git pull servidor master
 git branch
 ```
 
-## branch com commit
+## Visualizar branch com commit
 ```
 git branch -v 
 ```
 
-## exibe os commits pai
+## Exibe os commits pai
 ```
 git log --parents 
 ```
 
-## exibe os commits para os quais o master aponta
+## Exibe os commits para os quais o master aponta
 ```
 git log --decorate 
 ```
@@ -221,32 +221,32 @@ git log --decorate
 git log --parents --decorate --oneline 
 ```
 
-## cria uma nova branch nomeada design
+## Cria uma nova branch nomeada design
 ```
 git branch design 
 ```
 
-## troca de branch
+## Troca de branch
 ```
 git checkout design 
 ```
 
-## cria e troca de branch
+## Cria e troca de branch
 ```
 git checkout -b loja 
 ```
 
-## deleta branch loja
+## Deleta branch loja
 ```
 git branch -d loja 
 ```
 
-## deleta a branch loja se está já possuir commits
+## Deleta a branch loja se está já possuir commits
 ```
 git branch -D loja 
 ```
 
-## verifica branchs ainda não mescladas
+## Verifica branchs ainda não mescladas
 ```
 git branch --no-merged 
 ```
@@ -261,37 +261,37 @@ git merge design -m "Mesclando com a branch design"
 git rebase design 
 ```
 
-## lista as branchs remotas
+## Lista as branchs remotas
 ```
 git branch -r 
 ```
 
-## lista branchs remotas e locais
+## Lista branchs remotas e locais
 ```
 git branch -a 
 ```
 
-## lista branchs remotas com seus commits
+## Lista branchs remotas com seus commits
 ```
 git branch -rv 
 ```
 
-## compartilhar branchs remotas
+## Compartilhar branchs remotas
 ```
 git push origin design 
 ```
 
-## desfazer o git rebase
+## Desfazer o git rebase
 ```
 git reset --hard ORIG_HEAD 
 ```
 
-## cria a branch design a partir da branch remota origin/design
+## Cria a branch design a partir da branch remota origin/design
 ```
 git checkout -b design origin/design 
 ```
 
-## cria a branch design a partir da branch remota origin/design
+## Cria a branch design a partir da branch remota origin/design
 ```
 git checkout -t origin/design 
 ```
@@ -301,52 +301,52 @@ git checkout -t origin/design
 git fetch origin
 ```
 
-## obtem e mescla os novos commits de uma branch remota com uma branch local
+## Obtem e mescla os novos commits de uma branch remota com uma branch local
 ```
 git pull 
 ```
 
-## obetem e mescla novos commits usando rebase
+## Obetem e mescla novos commits usando rebase
 ```
 git pull --rebase 
 ```
 
-## remover definitivamente a branch remota origin/contato e a branch contato
+## Remover definitivamente a branch remota origin/contato e a branch contato
 ```
 git push origin :contato 
 ```
 
-## cria tag
+## Cria tag
 ```
 git tag v1.0 
 ```
 
-## lista as tags
+## Lista as tags
 ```
 git tag 
 ```
 
-## cria tag para o commit 343434
+## Cria tag para o commit 343434
 ```
 git tag banners <343434>  
 ```
 
-## deleta a tag banners
+## Deleta a tag banners
 ```
 git tag -d banners 
 ```
 
-## cria tag anotada
+## Cria tag anotada
 ```
 git tag -a v1.1 -m "liberando versão urgente" 
 ```
 
-## exibe informaçãoes da tag anotada
+## Exibe informaçãoes da tag anotada
 ```
 git show -s v1.1 
 ```
 
-## compartilha a tag v1.1
+## Compartilha a tag v1.1
 ```
 git push origin v1.1 
 ```
@@ -356,17 +356,17 @@ git push origin v1.1
 git push origin --tags
 ```
 
-## abortar o rebase voltando a situação antes da tentativa de mesclagem
+## Abortar o rebase voltando a situação antes da tentativa de mesclagem
 ```
 git rebase --abort 
 ```
 
-## pular o commit que gerou o conflito
+## Pular o commit que gerou o conflito
 ```
 git rebase --skip 
 ```
 
-## finalizar o git rebase após um conflito
+## Finalizar o git rebase após um conflito
 ```
 git add <file> seguido de git rebase --continue 
 ```

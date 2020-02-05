@@ -84,7 +84,7 @@ git log -n 2 --oneline --stat
 git diff 
 ```
 
-## Exibe a diferença entre os arquivos na area de stage e a ultima vesao comitada
+## Exibe a diferença entre os arquivos na area de stage e a ultima versão comitada
 ```
 git diff --staged 
 ```
@@ -164,7 +164,7 @@ git init --bare pasta.git # --> repository in /opt/repositorios/pasta.git/
 git remote add servidor(nome) file://192.168.0.1/opt/repositorios/pasta.git/(endereço)
 ```
 
-## listar o repositórios
+## Listar o repositórios
 ```
 git remote 
 ```

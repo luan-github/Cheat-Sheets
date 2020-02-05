@@ -1,4 +1,4 @@
-Lista de comandos Git
+#Lista de comandos Git
 
 git init # Cria o repositório do Git na pasta atual
 

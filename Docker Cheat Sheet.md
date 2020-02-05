@@ -2,7 +2,7 @@
 docker run hello-world
 
 ## Executar um container com terminal interativo
-docker run -ti ubuntu /bin/bash #<-comando
+docker run -ti ubuntu </bin/bash [comando]>
 
 ## Executar um container em background
 docker run -d ubuntu
@@ -89,31 +89,31 @@ docker update --cpu-shares 512 container1
 
 ## Subir container com volume
 docker run -ti -v /volume ubuntu /bin/bash
-# container: df -h
+* verifica no container: df -h
 
 ## Obter localização de volumes no Host
 docker inspect -f {{.Mounts}} <containerID>
 
-## Mapear volume na criação do volume
+## Mapear volume na criação
 docker run -ti -v /diretorioHost:/volumeContainer debian
 
 ## Subir container com volume (read-only)
 docker run -ti -v $HOME:/volume:ro ubuntu /bin/bash
 
-#Container data-only: armazena conteúdo para outros containers, e não precisa estar em execução
 ## Criar container Data-only
 docker create -v /data --name dbdados centos
+* Container data-only: armazena conteúdo para outros containers, e não precisa estar em execução
 
 ## Importar volume  de outro container na criação
-docker run -d -p 5432:5432 --name pgsql1 --volumes-from dbdados -e POSTGRESQL_USER=docker -e POSTGRESQL_PASS=docker -e POSTGRESQL=docker kamui/postgresql
+	docker run -d -p 5432:5432 --name pgsql1 --volumes-from dbdados -e POSTGRESQL_USER=docker -e POSTGRESQL_PASS=docker -e POSTGRESQL=docker kamui/postgresql
 
 ---------------------------------------------------
-*docker volume create <nameVolume>
-*docker volume inspect <nameVolume>
-*docker volume ls 
-*docker volume prune <--force>
-*docker volume rm <nameVolume>
-
+* docker volume create <nameVolume>
+* docker volume inspect <nameVolume>
+* docker volume ls 
+* docker volume prune <--force>
+* docker volume rm <nameVolume>
+---------------------------------------------------
 
 # Docker network
 
@@ -123,11 +123,11 @@ docker run -d -p 5432:5432 --name pgsql1 --volumes-from dbdados -e POSTGRESQL_US
 * docker network create database
 * docker network inspect database
 
-## Conectado a rede database
+## Conectando a rede database
 docker run -d --network database --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=dontusethisinprod mysql
 docker logs -f mysql
 
-## Conectado a rede bridge
+## Conectando a rede bridge
 docker run -d --name adminer -p 8080:8080 adminer
 docker network connect database adminer
 

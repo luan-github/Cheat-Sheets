@@ -60,9 +60,8 @@ docker rm -f <containerID>
 ## remover todos os containers parados
 docker rm $(docker ps -a -q)
 
-##################################################
-Configurar os limites de utilização de recursos
-##################################################
+
+# Configurar os limites de utilização de recursos
 
 ## Visualzar detalhes do container em execução
 docker inspect <containerID>
@@ -85,9 +84,9 @@ docker run -ti --cpu-shares 2014 --name container1 debian
 ## Atuaizar limite de utilização de CPU
 docker update --cpu-shares 512 container1
 
-###################################################
-Utilização de volumes no docker
-###################################################
+
+# Utilização de volumes no docker
+
 ## Subir container com volume
 docker run -ti -v /volume ubuntu /bin/bash
 # container: df -h
@@ -109,54 +108,52 @@ docker create -v /data --name dbdados centos
 docker run -d -p 5432:5432 --name pgsql1 --volumes-from dbdados -e POSTGRESQL_USER=docker -e POSTGRESQL_PASS=docker -e POSTGRESQL=docker kamui/postgresql
 
 ---------------------------------------------------
-•docker volume create <nameVolume>
-•docker volume inspect <nameVolume>
-•docker volume ls 
-•docker volume prune <--force>
-•docker volume rm <nameVolume>
+*docker volume create <nameVolume>
+*docker volume inspect <nameVolume>
+*docker volume ls 
+*docker volume prune <--force>
+*docker volume rm <nameVolume>
 
-###################################################
-Docker network
-###################################################
 
-docker network 
-docker network ls
-docker network inspect bridge
-docker network create database
-docker network inspect database
+# Docker network
 
-Conectado a rede database
+* docker network 
+* docker network ls
+* docker network inspect bridge
+* docker network create database
+* docker network inspect database
+
+## Conectado a rede database
 docker run -d --network database --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=dontusethisinprod mysql
 docker logs -f mysql
 
-Conectado a rede bridge
+## Conectado a rede bridge
 docker run -d --name adminer -p 8080:8080 adminer
 docker network connect database adminer
 
-Conectando container adminer a rede database
+## Conectando container adminer a rede database
 docker network connect database adminer
 
-Desconectando o container adminer da rede bridge
+## Desconectando o container adminer da rede bridge
 docker network disconnect bridge adminer
 
 
-###################################################
-Dockerfile
-###################################################
-nano Dockerfile
-FROM debian #define a imagem que será utilizada
-ADD file.txt /diretorio/
-CMD ["sh", "-c", "echo","$HOME"] #parâmetros do entrypoint
-LABEL Description='versão Bla bla bla' # Metadata
-COPY texto.txt /diretorio #funciona apenas p/ arquivos e diretórios
-ENTRYPOINT ["/usr/bin/apache2ctl", "-D", "FOREGROUND"]
-ENV variavelDeAmbiente="PASSWORD"
-EXPOSE 80 #define  a porta do container que deve estar disponível
-RUN apt-get update && apt-get install apache2
-USER luan #define o usuario padrao
-WORKDIR /code #diretório default
-VOLUME /diretorio
-MANTAINER Luan Silva da Silva luansstkd@gmail.com
+# Dockerfile
+
+	nano Dockerfile
+	FROM debian #define a imagem que será utilizada
+	ADD file.txt /diretorio/
+	CMD ["sh", "-c", "echo","$HOME"] #parâmetros do entrypoint
+	LABEL Description='versão Bla bla bla' # Metadata
+	COPY texto.txt /diretorio #funciona apenas p/ arquivos e diretórios
+	ENTRYPOINT ["/usr/bin/apache2ctl", "-D", "FOREGROUND"]
+	ENV variavelDeAmbiente="PASSWORD"
+	EXPOSE 80 #define  a porta do container que deve estar disponível
+	RUN apt-get update && apt-get install apache2
+	USER luan #define o usuario padrao
+	WORKDIR /code #diretório default
+	VOLUME /diretorio
+	MANTAINER Luan Silva da Silva luansstkd@gmail.com
 
 ## Executar container apartir do Dockerfile
 docker build . #Lê o Dockerfile na pasta
@@ -171,28 +168,28 @@ docker build -t nomeDaImagem:1.0 . # O ponto significa o diretório atual
 mkdir /dockerfile/apache
 nano Dockerfile
 
-FROM debian
-RUN apt-get update && apt-get install -y apache2 && apt-get clean
-ENV APACHE_LOCK_DIR="/var/lock"
-ENV APACHE_PID_FILE="/var/run/apache2.pid"
-ENV APACHE_RUN_USER="www-data"
-ENV APACHE_RUN_GROUP="www-data"
-ENV APACHE_LOG_DIR="/var/log/apache2"
+	FROM debian
+	RUN apt-get update && apt-get install -y apache2 && apt-get clean
+	ENV APACHE_LOCK_DIR="/var/lock"
+	ENV APACHE_PID_FILE="/var/run/apache2.pid"
+	ENV APACHE_RUN_USER="www-data"
+	ENV APACHE_RUN_GROUP="www-data"
+	ENV APACHE_LOG_DIR="/var/log/apache2"
 
-LABEL Description="Webserver"
+	LABEL Description="Webserver"
 
-VOLUME /var/www/html
+	VOLUME /var/www/html
 
-EXPOSE 80
+	EXPOSE 80
 
-#criar a imagem: docker build -t webserver:1.0 .
-#executar a imagem: docker run -ti webserver:1.0
-#verificar se o apache está em execução: ps -ef
-#iniciar o apache: /etc/init.d/apache2 start
-#verificar as portas ativas: ss -s
-#verificar o ip: ip addr
-#sair do container: Ctrl + P + Q
-#testar porta do container: curl <ip:porta>
+* Criar a imagem: docker build -t webserver:1.0 .
+* Executar a imagem: docker run -ti webserver:1.0
+* Verificar se o apache está em execução: ps -ef
+* Iniciar o apache: /etc/init.d/apache2 start
+* Verificar as portas ativas: ss -s
+* Verificar o ip: ip addr
+* Sair do container: Ctrl + P + Q
+* Testar porta do container: curl <ip:porta>
 
 ## historico da imagem
 docker history <imageid>
@@ -212,23 +209,22 @@ docker rmi -f userDockerHub/webserver:1.0 <ou imageid>
 ## Baixar imagem
 docker pull userDockerHub/webserver:1.0
 
-####################################################################
-Montar o distribuidor de imagens local
-####################################################################
+
+# Montar o distribuidor de imagens local
+
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 
 docker tag <imageid> localhost:5000/webserver:1.0
 
 docker push localhost:5000/webserver:1.0
 
-## interface gráfica from google: search by: docker registry
+* Opcionalmente pesquisar por docker registry
 
 ## Verificar images do registry
 curl localhost:5000/v2/_catalog
 
-###################################################################
-Parâmetros de rede
-###################################################################
+# Parâmetros de rede
+
 docker run -ti --dns 8.8.8.8 debian ## servidor de dns 
 
 docker run -ti --hostname webweb debian ## configura o hostname
@@ -243,14 +239,13 @@ docker run -ti --mac-address <mac personalizado> debian
 
 docker run -ti --net=host debian ## Configura o container para utilizar as mesmas variaveis de rede do host
 
-###################################################################
-Docker Machine
-###################################################################
-## Fazer a instalação
+# Docker Machine
+
+* Fazer a instalação
 
 docker-machine --version
 
-## Instalar o virtualbox
+* Instalar o virtualbox
 
 ## Criar VM = HostDocker
 docker-machine create --driver virtualbox nameHostDocker
@@ -280,13 +275,12 @@ docker-machine start nameHostDocker
 ## Remover
 docker-machine rm nameHostDocker
 
-#########################################################################
-Docker Compose
-#########################################################################
+# Docker Compose
 
+## Criar imagem
 build: . #caminho do Dockerfile
 
-#enviar comando para o container
+## Enviar comando para o container
 command: bundle exec thin -p 3000
 
 #nome do container

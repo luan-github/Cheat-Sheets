@@ -84,7 +84,7 @@ git log -n 2 --oneline --stat
 git diff 
 ```
 
-# Exibe a diferença entre os arquivos na area de stage e a ultima vesao comitada
+## Exibe a diferença entre os arquivos na area de stage e a ultima vesao comitada
 ```
 git diff --staged 
 ```

@@ -278,91 +278,93 @@ docker-machine rm nameHostDocker
 # Docker Compose
 
 ## Criar imagem
-build: . #caminho do Dockerfile
+	build: . <caminho do Dockerfile>
 
 ## Enviar comando para o container
-command: bundle exec thin -p 3000
+	command: bundle exec thin -p 3000
 
-#nome do container
-container_name: my-web-container
+## nome do container
+	container_name: my-web-container
 
-#indica o dns server
-dns: 8.8.8.8
+## indica o dns server
+	dns: 8.8.8.8
 
-#dns_search = especifica um search domain
-dns_search: example.com
+## dns_search = especifica um search domain
+	dns_search: example.com
 
-#dockerfile = especifica um Dockerfile alternativo
-dockerfile: Dockerfile-alternate
+## dockerfile = especifica um Dockerfile alternativo
+	dockerfile: Dockerfile-alternate
 
-#env_file = Especifica um arquivo com variaveis de ambiente
-env_file: .env
+## env_file = Especifica um arquivo com variaveis de ambiente
+	env_file: .env
 
-#enviroment = Adiciona variaveis de ambiente
-env_file:
-	RACK_ENV: development
+## enviroment = Adiciona variaveis de ambiente
+	env_file:
+		RACK_ENV: development
 
-#expose = expõe a porta do container
-expose:
-	- "3000"
-	- "8000"
+## expose = expõe a porta do container
+	expose:
+		- "3000"
+		- "8000"
 
-#external_links = linka containers que não fazem parte do docker-compose atual
-external_links:
-	- redis_1
-	- project_db_1:mysql
+## external_links = linka containers que não fazem parte do docker-compose atual
+	external_links:
+		- redis_1
+		- project_db_1:mysql
 
-#extra_hosts = Adiciona uma entrada no /etc/hosts do container
-extra_hosts:
-	- "somehost:ip"
-	- "otherhost:ip"
-#image = Indica uma imagem
-image: ubuntu:14.04
+## extra_hosts = Adiciona uma entrada no /etc/hosts do container
+	extra_hosts:
+		- "somehost:ip"
+		- "otherhost:ip"
 
-#labels = Adiciona metadata ao container
-labels:
-	com.example.description: "Accounting webapp"
-	com.example.description: "Finance"
+## image = Indica uma imagem
+	image: ubuntu:14.04
 
-#links  = linka containers dentro do mesmo docker-compose
-links:
-	- db
-	- db:databse
+## labels = Adiciona metadata ao container
+	labels:
+		com.example.description: "Accounting webapp"
+		com.example.description: "Finance"
 
-#log_driver = indica o formato de log a ser gerado, por ex: syslog, json-file, etc
-log_driver: syslog
+## links  = linka containers dentro do mesmo docker-compose
+	links:
+		- db
+		- db:databse
 
-OU
+## log_driver = indica o formato de log a ser gerado, por ex: syslog, json-file, etc
+	log_driver: syslog
 
-logging:
-	driver: syslog
+	OU
 
-#log_opt = Indica onde mandar os logs, pode ser um local ou remoto
-log_opt:
-	syslog-address: "tcp:## ip:porta"
-OU
-logging:
-	driver:syslog
-	options:
+	logging:
+		driver: syslog
+
+## log_opt = Indica onde mandar os logs, pode ser um local ou remoto
+	log_opt:
 		syslog-address: "tcp:## ip:porta"
+	OU
 
-#net = modo de uso da rede
-net: "bridge"
-net: "host"
+	logging:
+		driver:syslog
+		options:
+			syslog-address: "tcp:## ip:porta"
 
-#volumes, volume_driver = Monta volumes dentro do container
-volumes:
-	simple path
-	- /var/lib/mysql
-	absolute =path mapping
-	- /opt/data:/var/lib/mysql
-	path on the host, relative to the compose file
-	- ./cache:/tmp/cache
+## net = modo de uso da rede
+	net: "bridge"
+	net: "host"
 
-#volumes_from = monta volumes através de outro container
-volumes_from:
-	-service_name
-	-service_name.ro
+## volumes, volume_driver = Monta volumes dentro do container
+	volumes:
+		simple path
+		- /var/lib/mysql
+		absolute =path mapping
+		- /opt/data:/var/lib/mysql
+		path on the host, relative to the compose file
+		- ./cache:/tmp/cache
+
+## volumes_from = monta volumes através de outro container
+	volumes_from:
+		-service_name
+		-service_name.ro
 
 
 # Projeto Docker-Compose com PostgreSQL

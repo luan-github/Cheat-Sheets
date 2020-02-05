@@ -364,44 +364,43 @@ volumes_from:
 	-service_name
 	-service_name.ro
 
-#################################################################
-Projeto Docker-Compose com PostgreSQL
-#################################################################
-mkdir project
 
+# Projeto Docker-Compose com PostgreSQL
+
+mkdir project
 nano docker-compose.yml
 
-db:
-	image: postgres
-web:
-	build: .
-	command: python manage.py runserver 0.0.0.0:8000
-	volumes:
-		- .:/code
-	ports:
-		- 8000:8000
-	links:
-		- db
+	db:
+		image: postgres
+	web:
+		build: .
+		command: python manage.py runserver 0.0.0.0:8000
+		volumes:
+			- .:/code
+		ports:
+			- 8000:8000
+		links:
+			- db
 
 nano Dockerfile
 
-FROM python:2.7
-ENV PYTHONUNBEFFERED 1
-RUN mkdir /code
-WORKDIR /code
-ADD requirements.txt /code/
-RUN pip install -r requirements.txt
-ADD . /code/
+	FROM python:2.7
+	ENV PYTHONUNBEFFERED 1
+	RUN mkdir /code
+	WORKDIR /code
+	ADD requirements.txt /code/
+	RUN pip install -r requirements.txt
+	ADD . /code/
 
 nano requirements.txt
-Django
-psycopg2
+
+	Django
+	psycopg2
 
 ## executar no serviço web
 docker-compose run web django-admin.py startproject composeexample .
 
 editar o arquivo settings para o db postgres
-...
 
 ## Subir o ambiente
 docker-compose up -d
@@ -439,11 +438,9 @@ docker-compose exec <service> <command>
 ## Validar o arquivo docker-compose.yml
 docker-compose config
 
-
 --------------------------------------------------------------
 
-#################################################################
-Orquestração de containers
-#################################################################
-video 21 : https:## www.youtube.com/watch?v=KfH1cJErGb0&list=PLf-O3X2-mxDkiUH0r_BadgtELJ_qyrFJ_&index=21
+# Orquestração de containers
+
+[video 21](https://www.youtube.com/watch?v=KfH1cJErGb0&list=PLf-O3X2-mxDkiUH0r_BadgtELJ_qyrFJ_&index=21)
 

@@ -1,16 +1,23 @@
+# Comandos Screen
+
+## Obter versão
 	screen -vesion
 
-	screen // ativar screen com sessão sem nome
+## Ativar screen com sessão sem nome
+	screen 
 
- 	screen -S session1 // Criar sessão com nome session1
+## Criar sessão com nome session1
+ 	screen -S session1
 
-	screen -ls // Listar sessões
+## Listar sessões
+	screen -ls
 
-	número.nome_da_sessão   (data)				(estado)
-	19020.chatbot_Macçaroca	(05/26/2019 07:42:09 PM)	(Detached)
+## Retomar sessão
 	screen -r [número_da_sessão]  //Retomar sessão
 
-	Ctrl + a Ctrl + d // Salvar a sessão e sair deixando-a em execução
+## Salvar a sessão e sair deixando-a em execução
+	Ctrl + a + d
 
-	Exit ou Ctrl + d // Sair e fechar a sessão
+## Sair e fechar a sessão
+	Exit ou Ctrl + d
 

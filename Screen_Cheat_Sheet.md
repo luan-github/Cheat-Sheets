@@ -13,7 +13,7 @@
 	screen -ls
 
 ### Retomar sessão
-	screen -r [número_da_sessão]  //Retomar sessão
+	screen -r [número_da_sessão]
 
 ### Salvar a sessão e sair deixando-a em execução
 	Ctrl + a + d

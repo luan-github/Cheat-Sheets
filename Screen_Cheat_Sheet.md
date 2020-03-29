@@ -1,23 +1,23 @@
-# Comandos Screen
+## Comandos Screen básicos
 
-## Obter versão
+### Obter versão
 	screen -vesion
 
-## Ativar screen com sessão sem nome
+### Ativar screen com sessão sem nome
 	screen 
 
-## Criar sessão com nome session1
+### Criar sessão com nome session1
  	screen -S session1
 
-## Listar sessões
+### Listar sessões
 	screen -ls
 
-## Retomar sessão
+### Retomar sessão
 	screen -r [número_da_sessão]  //Retomar sessão
 
-## Salvar a sessão e sair deixando-a em execução
+### Salvar a sessão e sair deixando-a em execução
 	Ctrl + a + d
 
-## Sair e fechar a sessão
+### Sair e fechar a sessão
 	Exit ou Ctrl + d
 

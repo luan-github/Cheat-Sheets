@@ -44,3 +44,8 @@
 
 	Limpar:
 	sudo sh -c 'cat /dev/null > /var/log/file_name'
+
+### Encurtar exibição do caminho no terminal
+	export PROMPT_DIRTRIM=1
+	export PROMPT_DIRTRIM=2
+	export PROMPT_DIRTRIM=3

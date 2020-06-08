@@ -19,6 +19,12 @@
 ### Alterar a versão default
     nvm alias default 8.11.3
 
+### Remover uma versão que não está em uso
+    nvm unistall 6.14.4 # ou 10.10.0, 8.9.1, etc
+
+### Desativar uma versão em uso
+    nvm deactivate
+
 ### Instalar ferramentas de desenvolvimento
     sudo apt install build-essential
 
@@ -36,3 +42,12 @@
 
 ### Verificar versão npx
     npx -v
+
+### Desinstalar nvm
+    rm -rf "$NVM_DIR"
+
+    Editar ~/.bashrc removendo as linhas:
+
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion

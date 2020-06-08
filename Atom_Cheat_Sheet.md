@@ -16,6 +16,12 @@
 ## Abrir diretórios a partir do terminal
   atom path_1 path_2
 
+## Abrir painel do git
+    Ctrl + 9
+
+## Abrir painel do GitHub
+    Ctrl + 8
+
 ## Descartar mudanças salvas ou rastreadas
   Alt + Ctrl + Z -> git checkout HEAD -- OU git reset HEAD --
 

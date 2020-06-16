@@ -104,4 +104,4 @@ Pipfile:
 
 Pipfile.lock:
 
-    especificação detalhada de dependências do projeto para evitar atualizações de pacotes que dependem uns dos outros, quebrando a árvore de dependência do projeto
+    especificação detalhada de dependências do projeto para evitar atualizações de pacotes que dependem uns dos outros quebrando a árvore de dependência do projeto. É similar ao resultado do comando pip freeze.

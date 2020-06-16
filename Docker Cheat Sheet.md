@@ -1,3 +1,6 @@
+## Informações do docker
+	docker version
+	docker info
 ## Executar um container
 docker run hello-world
 
@@ -14,14 +17,20 @@ docker run -d ubuntu
 	Ctrl + P + Q
 
 ## Mostrar images disponíveis
-sudo docker images
-sudo docker image list
+docker images
+docker image list
+
+## Mostrar apenas o ID das imagens
+docker images -q
 
 ## Mostrar containers em execução
-sudo docker ps
+docker ps
 
 ## Mostrar todos os containers
-sudo docker ps -a
+docker ps -a
+
+## Mostrar apenas o ID dos containers
+docker ps -aq
 
 ## Voltar para o container
 docker attach <containerID>
@@ -54,11 +63,11 @@ docker logs <containerID>
 ## remover container que já está parado
 docker rm <containerID>
 
-## remover container em execução 
+## remover container em execução
 docker rm -f <containerID>
 
 ## remover todos os containers parados
-docker rm $(docker ps -a -q)
+docker rm $(docker ps -aq)
 
 
 # Configurar os limites de utilização de recursos
@@ -110,14 +119,14 @@ docker create -v /data --name dbdados centos
 ---------------------------------------------------
 * docker volume create <nameVolume>
 * docker volume inspect <nameVolume>
-* docker volume ls 
+* docker volume ls
 * docker volume prune <--force>
 * docker volume rm <nameVolume>
 ---------------------------------------------------
 
 # Docker network
 
-* docker network 
+* docker network
 * docker network ls
 * docker network inspect bridge
 * docker network create database
@@ -155,7 +164,7 @@ docker network disconnect bridge adminer
 	VOLUME /diretorio
 	MANTAINER Luan Silva da Silva luansstkd@gmail.com
 
-## Executar container apartir do Dockerfile
+## Constrói a imagem apartir do Dockerfile
 docker build . #Lê o Dockerfile na pasta
 
 ## Listar images
@@ -208,6 +217,7 @@ docker rmi -f userDockerHub/webserver:1.0 <ou imageid>
 
 ## Baixar imagem
 docker pull userDockerHub/webserver:1.0
+docker pull alpine
 
 
 # Montar o distribuidor de imagens local
@@ -225,7 +235,7 @@ curl localhost:5000/v2/_catalog
 
 # Parâmetros de rede
 
-docker run -ti --dns 8.8.8.8 debian ## servidor de dns 
+docker run -ti --dns 8.8.8.8 debian ## servidor de dns
 
 docker run -ti --hostname webweb debian ## configura o hostname
 
@@ -255,7 +265,7 @@ docker-machine env nameHostDocker
 eval $(docker-machine env nameHostDocker)
 
 ## Listar Hosts Docker com seus estados (ativo/parado)
-docker-machine ls 
+docker-machine ls
 
 ## Mostrar ip do host docker
 docker-machine ip nameHostDocker
@@ -422,7 +432,7 @@ docker-compose stop
 ## Iniciar containers
 docker-compose start
 
-## Verificar logs 
+## Verificar logs
 docker-compose logs < -f [optional]> <--tail=n , [optional]>
 
 ## Para e remover containers, redes e volumes associados
@@ -434,7 +444,7 @@ docker-compose build <service>
 ## Recriar imagens mesmo que não tenham sofrido alterações
 docker-compose up --build
 
-## Executar comandos em um container 
+## Executar comandos em um container
 docker-compose exec <service> <command>
 
 ## Validar o arquivo docker-compose.yml
@@ -445,4 +455,3 @@ docker-compose config
 # Orquestração de containers
 
 [video 21](https://www.youtube.com/watch?v=KfH1cJErGb0&list=PLf-O3X2-mxDkiUH0r_BadgtELJ_qyrFJ_&index=21)
-

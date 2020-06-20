@@ -374,3 +374,4 @@ git add <file> seguido de git rebase --continue
     git cat-file [-p, -t]
     git hash-object
     git count-objects
+    git show-ref master

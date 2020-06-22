@@ -375,3 +375,6 @@ git add <file> seguido de git rebase --continue
     git hash-object
     git count-objects
     git show-ref master
+
+## Note:
+  fetch -> merge -> push = git pull

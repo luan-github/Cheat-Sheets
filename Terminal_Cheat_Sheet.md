@@ -3,6 +3,9 @@
 ### Procurar pacotes em repositórios
 	apt-cache search namefirmware
 
+### Obter detalhes do pacote
+	apt-cache show package_name
+
 ### Procurar pacotes instalados
 	sudo apt list --installed | grep package_name_to_search
 	sudo dpkg-query -l | grep package_name_to_search

@@ -52,3 +52,23 @@
 	export PROMPT_DIRTRIM=1
 	export PROMPT_DIRTRIM=2
 	export PROMPT_DIRTRIM=3
+
+### Histórico
+	Filtra
+	history | grep atom
+
+	Remove a linha 3 do histórico
+	history -d 3
+
+	Limpa o histórico
+	history -c
+
+	Mostra os últimos 6 entradas do histórico
+	history | tail -6
+
+### Executar comandos
+	Pesquisa enquanto digita
+	Ctrl + r
+
+	Executa o comando 4
+	!4

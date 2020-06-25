@@ -1,0 +1,72 @@
+'.text.html':
+  'Django var':
+    'prefix': 'dvar'
+    'body': '{% $1 %}$0'
+  'Django template':
+    'prefix': 'dtemp'
+    'body': '{{ $1 }}$0'
+  'Django comment':
+    'prefix': 'comment'
+    'body': '{# $1 #}$0'
+  'Django if':
+    'prefix': 'if'
+    'body': '{% if $1 %}$0'
+  'Django else':
+    'prefix': 'else'
+    'body': '{% else %}$0'
+  'Django endif':
+    'prefix': 'endif'
+    'body': '{% endif %}$0'
+  'Django extends':
+    'prefix': 'extends'
+    'body': "{% extends '$1' %}$0"
+  'Django block title':
+    'prefix': 'block title'
+    'body': "{% block title %} $1 {% endblock title %}$0"
+  'Django block content':
+    'prefix': 'block content'
+    'body': """
+    {% block content %}
+      $1
+    {% endblock content %}$0
+    """
+  'Django csrf_token':
+    'prefix': 'csrf_token'
+    'body': "{% csrf_token %}"
+  'Django form.as_p':
+    'prefix': 'form.as_p'
+    'body': "{{form.as_p }}"
+  'Django load static':
+    'prefix': 'load static'
+    'body': "{% load static %}"
+
+# Python
+'.source.python':
+  'Django urls page':
+    'prefix': 'url page'
+    'body': """
+    from django.urls import path
+    from .views import $1
+
+    urlpatterns = [
+        path('$2/', $1.as_view(), name='$2'),
+    ]$0
+    """
+  'Django urlpatterns':
+    'prefix': 'urlpatterns'
+    'body': """
+    urlpatterns = [
+        path('$1/', $1.as_view(), name='$2'),$3
+    ]$0
+    """
+  'Django path with view':
+    'prefix': 'path view'
+    'body': """
+        path('$1/', $2.as_view(), name='$3'),$0
+    """
+  'Django path with include':
+    'prefix': 'path include'
+    'body': """
+        path('$1/', include('$2')),$0
+    """
+
